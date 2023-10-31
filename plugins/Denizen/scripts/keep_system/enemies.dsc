@@ -58,3 +58,12 @@ keep_enemy_handler:
         - flag <context.entity> keep_enemy_data.attacked expire:<context.entity.flag[keep_enemy.on_attack]>
         - define context <context.entity.proc[keep_enemy_attack_context]>
         - customevent id:keep_enemy_on_attack context:<[context]>
+
+keep_enemy_spawn:
+    type: task
+    definitions: enemy|location
+    script:
+    - spawn <[enemy]> <[location]> save:spawned
+    - define entity <entry[spawned].spawned_entity>
+    - flag <[entity]> keep_enemy_data.spawned
+    - determine <[entity]>
