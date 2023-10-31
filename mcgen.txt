@@ -1,4 +1,4 @@
 server:
     - Paper: 
         version: 1.20.2
-        build: 246
+        build: 260

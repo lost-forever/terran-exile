@@ -1,5 +1,5 @@
 plugins:
 - denizen:
-    build: 6906
-    file_name: Denizen-1.2.9-b6906-DEV.jar
+    build: 6910
+    file_name: Denizen-1.2.9-b6910-DEV.jar
     url: "https://ci.citizensnpcs.co/job/Denizen_Developmental/"
