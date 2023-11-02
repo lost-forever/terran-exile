@@ -23,3 +23,25 @@ aqua_affinity_ability:
         proxies:
             respiration: 4
             fire_protection: 4
+
+ignition_ability:
+    type: data
+    te$ability: true
+    name: Ignition
+    slots:
+    - main_hand
+    - offhand
+    base:
+        description:
+        - Smelts ore materials on contact.
+        colors:
+            from: orange
+            to: red
+    super:
+        description:
+        - Blasts ore materials on contact with high yield.
+        colors:
+            from: red
+            to: yellow
+        proxies:
+            efficiency: 3

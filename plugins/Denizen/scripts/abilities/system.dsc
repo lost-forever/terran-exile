@@ -14,15 +14,14 @@ item_get_ability_level:
         - determine <[item].flag[ability.level]>
     - determine null
 
+# TODO this should probably be optimized
 entity_get_ability_level:
     type: procedure
     debug: false
     definitions: entity[The living entity] | ability_id[The ability script ID]
     script:
     - define ability <[ability_id].proc[get_ability_by_id]>
-    - define equipment <[entity].equipment_map
-        .with[main_hand].as[<[entity].item_in_hand>]
-        .with[offhand].as[<[entity].item_in_offhand>]>
+    - define equipment <[entity].equipment_map.with[main_hand].as[<[entity].item_in_hand>].with[offhand].as[<[entity].item_in_offhand>]>
     - define items <[equipment].get[<[ability].data_key[slots]>].as[list]>
     - foreach <[items]> as:item:
         - define level <[item].proc[item_get_ability_level].context[<[ability_id]>]>
@@ -62,7 +61,7 @@ ability_get_proxies:
     debug: false
     definitions: ability[Ability data script] | stage_id['base' or 'super']
     script:
-    - determine <[ability].data_key[<[stage_id]>.proxies]>
+    - determine <[ability].data_key[<[stage_id]>.proxies].if_null[null]>
 
 item_grant_ability:
     type: procedure
@@ -71,7 +70,9 @@ item_grant_ability:
     script:
     - define ability <[ability_id].proc[get_ability_by_id]>
     - adjust def:item lore:<[ability].proc[ability_get_lore].context[base]>
-    - adjust def:item enchantments:<[ability].proc[ability_get_proxies].context[base]>
+    - define proxies <[ability].proc[ability_get_proxies].context[base]>
+    - if <[proxies]> != null:
+        - adjust def:item enchantments:<[proxies]>
     - adjust def:item hides:enchants
     - adjust def:item flag:ability:<map[id=<[ability_id]>;level=base]>
     - determine <[item]>
