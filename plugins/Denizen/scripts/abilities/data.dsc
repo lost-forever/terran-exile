@@ -1,7 +1,9 @@
-aqua_affinity_proxy:
+aqua_affinity_ability:
     type: data
     te$ability: true
     name: Aqua Affinity
+    slots:
+    - helmet
     base:
         description:
         - Enhanced dexterity and lung capacity underwater.
