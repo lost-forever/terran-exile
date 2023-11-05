@@ -31,5 +31,5 @@ ability_command:
         - define reason "Missing held item!"
     - inject cmd_err
     # Apply ability and set back to inventory
-    - define result <[item].proc[item_grant_ability].context[<[id]>]>
+    - define result <[item].proc[item_apply_ability].context[<[id]>|<[level]>]>
     - inventory set o:<[result]> slot:hand d:<[user].inventory>

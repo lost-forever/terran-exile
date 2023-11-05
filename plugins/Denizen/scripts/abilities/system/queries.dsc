@@ -13,7 +13,7 @@ item_has_ability:
     type: procedure
     definitions: item[The equipment item] | ability_id[The ability script ID]
     script:
-    - determine <[item].has_flag[ability].and[<[item].flag[ability.id].equals[<[ability_id]>]>]>
+    - determine <[item].flag[ability.id].equals[<[ability_id]>].if_null[false]>
 
 # item_get_ability_level:
 #     type: procedure
