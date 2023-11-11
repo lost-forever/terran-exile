@@ -11,10 +11,10 @@ ability_get_name:
 ability_get_description:
     type: procedure
     debug: false
-    definitions: ability[Ability data script] | level['base' or 'super']
+    definitions: ability[Ability data script] | level['base' or 'super'] | color[The description color]
     script:
     - define lines <[ability].data_key[<[level]>.description]>
-    - determine <[lines].parse_tag[<dark_gray><[parse_value]>]>
+    - determine <[lines].parse_tag[<[color].if_null[<dark_gray>]><[parse_value]>]>
 
 ability_get_lore:
     type: procedure
@@ -31,6 +31,16 @@ ability_get_proxies:
     definitions: ability[Ability data script] | level['base' or 'super']
     script:
     - determine <[ability].data_key[<[level]>.proxies].if_null[null]>
+
+ability_get_icon:
+    type: procedure
+    debug: false
+    definitions: ability[Ability data script]
+    script:
+    - define item <[ability].data_key[icon].as[item]>
+    - adjust def:item display:<[ability].proc[ability_get_name].context[base]>
+    - adjust def:item lore:<[ability].proc[ability_get_description].context[base|<gray>]>
+    - determine <[item]>
 
 ability_get_data_map:
     type: procedure
