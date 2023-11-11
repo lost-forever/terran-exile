@@ -18,7 +18,7 @@ item_apply_ability_base:
     debug: false
     definitions: item[The base item] | ability_id[The ability script ID]
     script:
-    #- adjust def:item hides:enchants
+    - adjust def:item hides:enchants
     - determine <[item].proc[_item_apply_ability_level].context[<[ability_id]>|base]>
 
 item_apply_ability_super:
