@@ -3,7 +3,7 @@ aqua_affinity_ability:
     te$ability: true
     name: Aqua Affinity
     slots:
-    - helmet
+    - armor
     base:
         description:
         - Enhanced dexterity and lung capacity underwater.
@@ -28,9 +28,9 @@ ignition_ability:
     type: data
     te$ability: true
     name: Ignition
+    icon: blaze_powder
     slots:
-    - main_hand
-    - offhand
+    - hand
     base:
         description:
         - Smelts ore materials on contact.
@@ -45,3 +45,28 @@ ignition_ability:
             to: yellow
         proxies:
             efficiency: 3
+
+shadow_ability:
+    type: data
+    te$ability: true
+    name: Shadow
+    icon: ender_eye
+    slots:
+    - hand
+    base:
+        description:
+        - Become highly invisible.
+        colors:
+            from: <&ns>999999
+            to: <&ns>575757
+        active:
+            cost: 20
+            cooldown: 20s
+    super:
+        description:
+        - Become truly invisible; one with the shadows.
+        colors:
+            from: <&ns>c7a6a3
+            to: <&ns>4d403f
+        active:
+            cost: 15

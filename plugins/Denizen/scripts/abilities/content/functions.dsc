@@ -22,3 +22,32 @@ ignition_fn:
         raw_copper: copper_ingot
         raw_gold: gold_ingot
         ancient_debris: netherite_scrap
+
+shadow_fn:
+    type: world
+    events:
+        after custom event id:use_ability data:id:shadow_ability:
+        - define duration 15s
+        - if <context.level> == super:
+            - define duration 20s
+            - cast speed duration:20s amplifier:1 hide_particles
+            - flag <player> ability_data.shadow_invulnerable expire:5s
+        - else:
+            - flag <player> ability_data.shadow_particles expire:15s
+        - cast invisibility duration:<[duration]> hide_particles
+        - playeffect effect:spell_mob_ambient at:<player.location> quantity:100 velocity:255,0,0
+        - playsound <player.location> sound:entity_phantom_ambient
+        - playsound <player.location> sound:block_brewing_stand_brew
+        - flag <player> ability_data.shadow_invisible expire:<[duration]>
+        - adjust <player> hide_from_players:true
+        - wait <[duration]>
+        - adjust <player> show_to_players:true
+        on player damaged flagged:ability_data.shadow_invulnerable:
+        - determine cancelled
+        after player steps on block flagged:ability_data.shadow_particles chance:15:
+        - playeffect effect:soul_fire_flame at:<context.location>
+        after player damages player:
+        - if <context.damager.has_flag[ability_data.shadow_invisible]>:
+            - adjust <player> show_to_players:true
+            - flag <context.damager> ability_data.shadow_invisible:!
+

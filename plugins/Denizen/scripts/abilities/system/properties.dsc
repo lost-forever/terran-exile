@@ -5,7 +5,7 @@ ability_get_name:
     script:
     - define name <[ability].data_key[name]>
     - define format <[level].equals[super].if_true[<bold>].if_false[<empty>]>
-    - define gradient <[ability].data_key[<[level]>.colors]>
+    - define gradient <[ability].parsed_key[<[level]>.colors]>
     - determine <&gradient[<[gradient].with[style].as[hsb]>]><[format]><[name]>
 
 ability_get_description:
