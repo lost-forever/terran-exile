@@ -11,6 +11,8 @@ plugins/*.jar
 
 # Citizens
 plugins/Citizens/saves.yml
+plugins/Citizens/shops.yml
+plugins/Citizens/lib
 
 # Denizen
 plugins/Denizen/*
