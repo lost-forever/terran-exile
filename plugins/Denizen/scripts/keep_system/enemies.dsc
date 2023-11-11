@@ -34,7 +34,7 @@ keep_enemy_attack_loop:
     - if <[data].contains[delay]>:
         - wait <[data.delay]>
     # Custom event context to re-use in the loop
-    - define context <[enemy].proc[keep_enemy_attack_context].with[name=<[attack]>]>
+    - define context <[enemy].proc[keep_enemy_attack_context].with[name].as[<[attack]>]>
     # While this target session is still valid, emit the attack event
     # and wait for the specified duration
     - while <[enemy].proc[keep_enemy_attack_valid].context[<[id]>]>:

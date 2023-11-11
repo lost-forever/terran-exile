@@ -21,7 +21,7 @@ sellsword_fn:
         - if not <context.entity.is_spawned> or <context.entity.health_percentage> > 25:
             - stop
         # Stop enemy attacking state
-        - flag <context.entity> keep_enemy_data.fleeing expire:10s
+        - flag <context.entity> keep_enemy_data.fleeing expire:15s
         - define held_item <context.entity.item_in_hand>
         - adjust <context.entity> aggressive:false
         - adjust <context.entity> item_in_hand:air
