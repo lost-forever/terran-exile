@@ -26,6 +26,7 @@ ignition_fn:
 shadow_fn:
     type: world
     events:
+        # TODO: untarget monsters from player
         after custom event id:use_ability data:id:shadow_ability:
         - define duration 15s
         - if <context.level> == super:
@@ -51,3 +52,32 @@ shadow_fn:
             - adjust <player> show_to_players:true
             - flag <context.damager> ability_data.shadow_invisible:!
 
+cryonics_fn:
+    type: world
+    events:
+        after custom event id:use_ability data:id:cryonics_ability data:on:monster:
+        - if <context.level> == super:
+            - define entities <context.on.location.find_entities[monster].within[4]>
+        - else:
+            - define entities <context.on.as[list]>
+        - cast slow <[entities]> amplifier:255 duration:10s hide_particles
+        - playsound <[entities].parse[location]> sound:entity_player_hurt_freeze
+        - flag <[entities]> ability_data.frozen expire:10s
+        - flag <[entities]> ability_data.afterfreeze
+        - foreach <[entities]> as:entity:
+            - while <[entity].is_spawned> and <[entity].has_flag[ability_data.frozen]>:
+                - playeffect effect:snowflake at:<[entity].location.above> quantity:<util.random.int[4].to[8]>
+                - playeffect effect:block_crack at:<[entity].location.above> quantity:<util.random.int[4].to[8]> special_data:blue_ice offset:0.25,0.25,0.25
+                - wait <util.random.int[3].to[10]>t
+        on entity_flagged:ability_data.frozen damages player:
+        - playsound <context.entity.location> sound:block_powder_snow_fall
+        - determine <context.final_damage.div[2]>
+        on player damages entity_flagged:ability_data.frozen:
+        - if not <context.was_critical>:
+            - playsound <context.entity.location> sound:entity_player_attack_crit
+        - determine <context.final_damage.mul[1.25]>
+        on entity knocks back entity_flagged:ability_data.frozen:
+        - determine cancelled
+        on entity_flagged:ability_data.afterfreeze damaged by fire|fire_tick:
+        - playsound <context.entity.location> sound:item_firecharge_use
+        - determine <context.final_damage.mul[1.5]>

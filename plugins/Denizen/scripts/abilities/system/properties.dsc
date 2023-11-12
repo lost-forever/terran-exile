@@ -6,7 +6,7 @@ ability_get_name:
     - define name <[ability].data_key[name]>
     - define format <[level].equals[super].if_true[<bold>].if_false[<empty>]>
     - define gradient <[ability].parsed_key[<[level]>.colors]>
-    - determine <&gradient[<[gradient].with[style].as[hsb]>]><[format]><[name]>
+    - determine <&gradient[<map[style=hsb].include[<[gradient]>]>]><[format]><[name]>
 
 ability_get_description:
     type: procedure

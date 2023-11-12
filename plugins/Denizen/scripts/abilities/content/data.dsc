@@ -70,3 +70,29 @@ shadow_ability:
             to: <&ns>4d403f
         active:
             cost: 15
+
+cryonics_ability:
+    type: data
+    te$ability: true
+    name: Cryonics
+    icon: snowball
+    slots:
+    - hand
+    base:
+        description:
+        - Freeze an enemy in place.
+        colors:
+            from: blue
+            to: white
+            style: rgb
+        active:
+            cost: 20
+            cooldown: 15s
+    super:
+        description:
+        - Freeze many enemies in place.
+        colors:
+            from: blue
+            to: white
+        active:
+            cooldown: 30s
