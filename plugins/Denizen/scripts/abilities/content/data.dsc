@@ -8,8 +8,8 @@ aqua_affinity_ability:
         description:
         - Enhanced dexterity and lung capacity underwater.
         colors:
-            from: teal
-            to: blue
+            from: <&ns>2bc2a1
+            to: <&ns>30b1d9
         proxies:
             aqua_affinity: 1
             respiration: 3
@@ -18,8 +18,8 @@ aqua_affinity_ability:
         - Enhanced dexterity and lung capacity underwater.
         - Fire has little effect on your skin.
         colors:
-            from: teal
-            to: lime
+            from: <&ns>5149e6
+            to: white
         proxies:
             respiration: 4
             fire_protection: 4
@@ -35,14 +35,15 @@ ignition_ability:
         description:
         - Smelts ore materials on contact.
         colors:
-            from: orange
-            to: red
+            from: <&ns>a83232
+            to: <&ns>ff6600
+            style: rgb
     super:
         description:
         - Blasts ore materials on contact with high yield.
         colors:
-            from: red
-            to: yellow
+            from: <&ns>ff2200
+            to: <&ns>faff9c
         proxies:
             efficiency: 3
 
@@ -82,7 +83,7 @@ cryonics_ability:
         description:
         - Freeze an enemy in place.
         colors:
-            from: blue
+            from: <&ns>5dabe3
             to: white
             style: rgb
         active:
@@ -92,7 +93,7 @@ cryonics_ability:
         description:
         - Freeze many enemies in place.
         colors:
-            from: blue
-            to: white
+            from: <&ns>645abf
+            to: <&ns>3bffc7
         active:
             cooldown: 30s
