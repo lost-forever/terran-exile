@@ -1,0 +1,37 @@
+name = "Terran Exile"
+mc_version = "1.20.2"
+
+[jar]
+type = "paper"
+
+[variables]
+PORT = "25565"
+
+[launcher]
+aikars_flags = true
+proxy_flags = false
+nogui = true
+eula_args = false
+
+[[plugins]]
+type = "modrinth"
+id = "simple-voice-chat"
+version = "5XcFdUYz"
+
+[[plugins]]
+type = "jenkins"
+url = "https://ci.citizensnpcs.co"
+job = "Denizen_Developmental"
+build = "latest"
+artifact = "first"
+
+[[plugins]]
+type = "jenkins"
+url = "https://ci.citizensnpcs.co"
+job = "Citizens2"
+build = "latest"
+artifact = "first"
+
+[markdown]
+files = ["README.md"]
+auto_update = false

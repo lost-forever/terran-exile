@@ -7,7 +7,6 @@ versions
 
 # Plugin folder
 plugins/bStats
-plugins/*.jar
 
 # Citizens
 plugins/Citizens/saves.yml
@@ -34,7 +33,10 @@ world*
 # Various files
 .console_history
 *.json
-paper.jar
+*.jar
 
 # Leave eula out - make end user enable it
 eula.txt
+
+# mcman: Exclude env secrets
+.env
