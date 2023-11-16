@@ -333,9 +333,9 @@ Packets:
 # Tags work here and will be pre-parsed at load time. RGB color codes work here.
 Colors:
     # The base text color. 'narrate' command usages should usually start with <&[base]>
-    base: <&2>
+    base: <gray>
     # Special/stand-out/focused/emphasized text within a message. 'narrate' commands that need to emphasize a value should use this on those values.
-    emphasis: <&b>
+    emphasis: <yellow>
     # Error messages. 'narrate' commands displaying an error message should use this.
     error: <red>
     # Warning messages. 'narrate' commands displaying a warning message should use this.
@@ -343,8 +343,16 @@ Colors:
     # Your preferred color for item names. Item script "display name" keys should usually use this.
     item: <gold>
     # Your preferred item lore base color. Item script "lore" lines should start with this.
-    lore: <&7>
+    lore: <gray>
     # Your preferred color for NPC names. Scripts that use the "create" command should usually use this.
     npc: <&a>
     # Default: the backup for when a color label is unrecognized. Generally don't touch this.
     default: <white>
+    # Positive connotations or success
+    positive: <green>
+    # Negative connotations but not error
+    negative: <red>
+    # Chat URLs
+    url: <blue><underline>
+    # Discord branding color
+    discord: <&color[#7289DA]>
