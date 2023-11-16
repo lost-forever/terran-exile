@@ -40,3 +40,4 @@ eula.txt
 
 # mcman: Exclude env secrets
 .env
+.mcman.lock

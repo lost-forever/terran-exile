@@ -14,11 +14,6 @@ nogui = true
 eula_args = false
 
 [[plugins]]
-type = "modrinth"
-id = "simple-voice-chat"
-version = "5XcFdUYz"
-
-[[plugins]]
 type = "jenkins"
 url = "https://ci.citizensnpcs.co"
 job = "Denizen_Developmental"
@@ -31,6 +26,11 @@ url = "https://ci.citizensnpcs.co"
 job = "Citizens2"
 build = "latest"
 artifact = "first"
+
+[[plugins]]
+type = "modrinth"
+id = "simple-voice-chat"
+version = "b2fQucaC"
 
 [markdown]
 files = ["README.md"]
