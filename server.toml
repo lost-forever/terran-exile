@@ -10,6 +10,7 @@ PORT = "25565"
 [launcher]
 nogui = true
 preset_flags = "aikars"
+eula_args = true
 
 [[plugins]]
 type = "jenkins"
@@ -35,6 +36,12 @@ type = "url"
 url = "https://download.luckperms.net/1521/bukkit/loader/LuckPerms-Bukkit-5.4.108.jar"
 filename = "LuckPerms-Bukkit-5.4.108.jar"
 desc = "LuckPerms"
+
+[[plugins]]
+type = "ghrel"
+repo = "MilkBowl/Vault"
+tag = "1.7.3"
+asset = "Vault.jar"
 
 [markdown]
 files = ["README.md"]
