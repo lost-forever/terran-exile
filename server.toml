@@ -8,10 +8,8 @@ type = "paper"
 PORT = "25565"
 
 [launcher]
-preset_flags = "aikars"
-proxy_flags = false
 nogui = true
-eula_args = false
+preset_flags = "aikars"
 
 [[plugins]]
 type = "jenkins"
@@ -32,6 +30,15 @@ type = "modrinth"
 id = "simple-voice-chat"
 version = "b2fQucaC"
 
+[[plugins]]
+type = "url"
+url = "https://download.luckperms.net/1521/bukkit/loader/LuckPerms-Bukkit-5.4.108.jar"
+filename = "LuckPerms-Bukkit-5.4.108.jar"
+desc = "LuckPerms"
+
 [markdown]
 files = ["README.md"]
 auto_update = false
+
+[options]
+upload_to_mclogs = false
