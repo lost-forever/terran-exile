@@ -8,7 +8,7 @@ type = "paper"
 PORT = "25565"
 
 [launcher]
-aikars_flags = true
+preset_flags = "aikars"
 proxy_flags = false
 nogui = true
 eula_args = false
