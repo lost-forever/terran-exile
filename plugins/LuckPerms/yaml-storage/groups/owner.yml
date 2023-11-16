@@ -1,0 +1,5 @@
+name: owner
+permissions:
+- rank.command
+parents:
+- admin
