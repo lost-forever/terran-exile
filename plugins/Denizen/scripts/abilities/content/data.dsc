@@ -8,8 +8,8 @@ aqua_affinity_ability:
         description:
         - Enhanced dexterity and lung capacity underwater.
         colors:
-            from: <&ns>2bc2a1
-            to: <&ns>30b1d9
+            from: <color[#2bc2a1]>
+            to: <color[#30b1d9]>
         proxies:
             aqua_affinity: 1
             respiration: 3
@@ -18,7 +18,7 @@ aqua_affinity_ability:
         - Enhanced dexterity and lung capacity underwater.
         - Fire has little effect on your skin.
         colors:
-            from: <&ns>5149e6
+            from: <color[#5149e6]>
             to: white
         proxies:
             respiration: 4
@@ -35,15 +35,15 @@ ignition_ability:
         description:
         - Smelts ore materials on contact.
         colors:
-            from: <&ns>a83232
-            to: <&ns>ff6600
+            from: <color[#a83232]>
+            to: <color[#ff6600]>
             style: rgb
     super:
         description:
         - Blasts ore materials on contact with high yield.
         colors:
-            from: <&ns>ff2200
-            to: <&ns>faff9c
+            from: <color[#ff2200]>
+            to: <color[#faff9c]>
         proxies:
             efficiency: 3
 
@@ -67,8 +67,8 @@ shadow_ability:
         description:
         - Become truly invisible; one with the shadows.
         colors:
-            from: <&ns>c7a6a3
-            to: <&ns>4d403f
+            from: <color[#c7a6a3]>
+            to: <color[#4d403f]>
         active:
             cost: 15
 
@@ -83,7 +83,7 @@ cryonics_ability:
         description:
         - Freeze an enemy in place.
         colors:
-            from: <&ns>5dabe3
+            from: <color[#5dabe3]>
             to: white
             style: rgb
         active:
@@ -93,7 +93,7 @@ cryonics_ability:
         description:
         - Freeze many enemies in place.
         colors:
-            from: <&ns>645abf
-            to: <&ns>3bffc7
+            from: <color[#645abf]>
+            to: <color[#3bffc7]>
         active:
             cooldown: 30s
