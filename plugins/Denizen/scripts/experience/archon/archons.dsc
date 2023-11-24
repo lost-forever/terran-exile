@@ -52,8 +52,9 @@ exp_archon_activation:
         # Rotation loop for item entity (exponential)
         - define sounds <[archon].data_key[altar_sounds]>
         - repeat 80 as:n:
-            - define angle <util.tau.mul[<[n].div[50].power[3]>]>
-            - adjust <[entity]> left_rotation:<location[0,1,0].to_axis_angle_quaternion[<[angle]>]>
+            - adjust <[entity]> interpolation_duration:1t
+            - adjust <[entity]> interpolation_start:0t
+            - adjust <[entity]> left_rotation:<location[0,1,0].to_axis_angle_quaternion[<util.tau.mul[<[n].div[50].power[3]>]>]>
             # As item rotation gets faster, more chance of rotat sound
             - define progress <[n].div[80].power[2]>
             - if <util.random_chance[<[progress].mul[100]>]>:
