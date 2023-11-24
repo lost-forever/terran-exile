@@ -10,9 +10,9 @@ _exp_flag_archon_materials:
     - flag server exp.mats.<[type]>:<server.flag[exp.mats.<[type]>].include[<[matched]>]>
     - flag <[matched]> exp.podium_<[type]>:<[archon]>
     altar:
-    - run _exp_flag_archon_materials def:altar|<[archon].parsed_key[podium].last>|<[archon]>
+    - run _exp_flag_archon_materials def.type:altar def.archon:<[archon]> def.matcher:<[archon].parsed_key[podium].last>
     offering:
-    - run _exp_flag_archon_materials def:offering|<[archon].parsed_key[offering]>|<[archon]>
+    - run _exp_flag_archon_materials def.type:offering def.archon:<[archon]> def.matcher:<[archon].parsed_key[offering]>
 
 exp_load_archons:
     type: world

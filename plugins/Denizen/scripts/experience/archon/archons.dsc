@@ -9,15 +9,15 @@ archon_get_rewards:
 
 archon_apply_rewards:
     type: task
-    definitions: archon[The archon data script]
+    definitions: archon[The archon data script] | level[The reward level]
     script:
     - define rewards <[archon].proc[archon_get_rewards]>
-    # TODO: leveling
-    - define level 1
     - if <[rewards.item]> != null:
         - give <[rewards.item]> quantity:<[level]>
+        - playsound <player> sound:entity_item_pickup volume:0.5
     - if <[rewards.effect]> != null:
-        - cast <[rewards.effect]> amplifier:<[level]>
+        - cast <[rewards.effect]> amplifier:<[level].sub[1]> duration:30s
+        - playsound <player> sound:block_brewing_stand_brew volume:0.5
 
 exp_archon_activation:
     type: world
