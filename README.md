@@ -19,9 +19,9 @@
 ### Discord Bot
 
 1. Add a `DISCORD_TOKEN` entry to the `secrets.secret` file in the Denizen plugin folder
-2. Run the `discord` command to set channel IDs<br>
-    a. `discord bridge <id>`: Public Discord-Minecraft bridge channel
-    b. `discord admin <id>`: Admin-only logs channel
+2. Run the `discord` command to set channel IDs
+    - `discord bridge <id>`: Public Discord-Minecraft bridge channel
+    - `discord admin <id>`: Admin-only logs channel
 
 ## Plugins
 
