@@ -52,6 +52,15 @@ shadow_fn:
             - adjust <player> show_to_players:true
             - flag <context.damager> ability_data.shadow_invisible:!
 
+_cryonics_particles:
+    type: task
+    definitions: entity
+    script:
+    - while <[entity].is_spawned> and <[entity].has_flag[ability_data.frozen]>:
+        - playeffect effect:snowflake at:<[entity].location.above> quantity:<util.random.int[4].to[8]>
+        - playeffect effect:block_crack at:<[entity].location.above> quantity:<util.random.int[4].to[8]> special_data:blue_ice offset:0.25,0.25,0.25
+        - wait <util.random.int[3].to[10]>t
+
 cryonics_fn:
     type: world
     events:
@@ -65,10 +74,7 @@ cryonics_fn:
         - flag <[entities]> ability_data.frozen expire:10s
         - flag <[entities]> ability_data.afterfreeze
         - foreach <[entities]> as:entity:
-            - while <[entity].is_spawned> and <[entity].has_flag[ability_data.frozen]>:
-                - playeffect effect:snowflake at:<[entity].location.above> quantity:<util.random.int[4].to[8]>
-                - playeffect effect:block_crack at:<[entity].location.above> quantity:<util.random.int[4].to[8]> special_data:blue_ice offset:0.25,0.25,0.25
-                - wait <util.random.int[3].to[10]>t
+            - run _cryonics_particles def:<[entity]>
         on entity_flagged:ability_data.frozen damages player:
         - playsound <context.entity.location> sound:block_powder_snow_fall
         - determine <context.final_damage.div[2]>
